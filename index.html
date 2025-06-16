@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coin  O‘yini</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="./pngtree-glossy-golden-coin-icon-png-image_2898883.jpg" type="image/x-icon" />
+</head>
+<body>
+  <div class="profile">
+    <h2>👤 Profil: <span id="username">Mehmon</span></h2>
+    <p>💰 Coinlar: <span id="coin-count">0</span></p>
+    <button id="add-coin">+10 Coin</button>
+    <hr style="margin: 40px 0; border: 1px solid #ccc;">
+
+<div class="crash-game">
+  <h2>🚀 Crash Game</h2>
+  <p>Ko‘paytiruvchi: <span id="multiplier">1.00x</span></p>
+  <input type="number" id="bet-amount" placeholder="Tikiladigan coinlar" />
+  <button id="start-crash">Boshlash</button>
+  <br><br>
+  <button id="cash-out" disabled>💸 Cash Out</button>
+  <p id="crash-status"></p>
+</div>
+
+  <hr style="margin: 40px 0; border: 1px solid #ccc;">
+
+<div class="shop">
+  <h2>🛒 Keys Do‘koni</h2>
+  <div class="item">
+    <p>🟡 Gold Key — 50 coin</p>
+    <button onclick="buyKey('gold')">Sotib olish</button>
+  </div>
+  <div class="item">
+    <p>🔵 Blue Key — 30 coin</p>
+    <button onclick="buyKey('blue')">Sotib olish</button>
+  </div>
+  <div class="item">
+    <p>🟢 Green Key — 10 coin</p>
+    <button onclick="buyKey('green')">Sotib olish</button>
+
+    
+
+  </div>
+</div>
+
+<div class="inventory">
+  <h3>🎒 Sizning keyslaringiz:</h3>
+  <ul id="key-list"></ul>
+</div>
+
+<div class="open-keys">
+  <h3>🎁 Key ochish:</h3>
+  <br>
+  <button onclick="openKey('gold')">🟡 Gold Key-ni och</button>
+  <br><br>
+  <button onclick="openKey('blue')">🔵 Blue Key-ni och</button>
+  <br><br>
+  <button onclick="openKey('green')">🟢 Green Key-ni och</button>
+  <p id="reward-text" style="margin-top: 10px; font-weight: bold;"></p>
+</div>
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
