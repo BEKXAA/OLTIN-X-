@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <title>Promokod Sahifasi</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    input, button {
+      padding: 10px;
+      margin-top: 10px;
+      width: 100%;
+      font-size: 16px;
+    }
+    .message {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Promokodni kiriting</h2>
+    <input type="text" id="promoInput" placeholder="Promokod...">
+    <button onclick="checkPromo()">Tasdiqlash</button>
+    <div class="message" id="message"></div>
+    <p>Balansingiz: <span id="coins">0</span> tanga</p>
+
+  </div>
+
+  <script>
+    function checkPromo() {
+      const input = document.getElementById('promoInput').value.trim().toUpperCase();
+      const message = document.getElementById('message');
+
+      if (input === "MAGA BEKA") {
+        if (!localStorage.getItem("promoUsed")) {
+          localStorage.setItem("coins", (parseInt(localStorage.getItem("coins")) || 0) + 100);
+          localStorage.setItem("promoUsed", "true");
+          message.style.color = "green";
+          message.textContent = "Promokod muvaffaqiyatli faollashtirildi! +100 tanga 🎉";
+        } else {
+          message.style.color = "orange";
+          message.textContent = "Siz bu promokodni allaqachon ishlatgansiz.";
+        }
+      } else {
+        message.style.color = "red";
+        message.textContent = "Noto'g'ri promokod.";
+      }
+    }
+
+    document.getElementById("coins").textContent = localStorage.getItem("coins") || 0;
+
+  </script>
+
+
+<script src="./promo.js"></script>
+</body>
+</html>

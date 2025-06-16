@@ -4,6 +4,12 @@
   padding: 0;
 }
 
+.gg a{
+  text-decoration: none;
+  color: white;
+}
+
+
 body {
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(135deg, #ffe259, #ffa751);
