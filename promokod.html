@@ -1,73 +1,103 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-  <meta charset="UTF-8">
-  <title>Promokod Sahifasi</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Promokod</title>
   <style>
     body {
       font-family: sans-serif;
-      background: #f2f2f2;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      padding: 20px;
+      background: #f9f9f9;
     }
-    .container {
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
+    .promo-container {
+      max-width: 400px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      text-align: center;
     }
-    input, button {
-      padding: 10px;
-      margin-top: 10px;
+    input {
       width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 2px solid #ddd;
+      border-radius: 5px;
       font-size: 16px;
     }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #4CAF50;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #45a049;
+    }
     .message {
-      margin-top: 15px;
+      margin-top: 10px;
       font-weight: bold;
     }
+
+.ortga a{
+  text-decoration: none;
+  color: black;
+}
+
+
   </style>
 </head>
 <body>
-
-  <div class="container">
-    <h2>Promokodni kiriting</h2>
-    <input type="text" id="promoInput" placeholder="Promokod...">
-    <button onclick="checkPromo()">Tasdiqlash</button>
+  <div class="promo-container">
+    <h3 class="ortga"><a href="./index.html">Ortga</a></h3>
+    <h2>Promokod kiriting</h2>
+    <input type="text" id="promoInput" placeholder="Promokod..." />
+    <button onclick="usePromo()">Aktivlashtirish</button>
     <div class="message" id="message"></div>
-    <p>Balansingiz: <span id="coins">0</span> tanga</p>
-
   </div>
 
   <script>
-    function checkPromo() {
-      const input = document.getElementById('promoInput').value.trim().toUpperCase();
-      const message = document.getElementById('message');
+    const validPromos = {
+      "MAGA": 100,
+      "BEKXAA": 105,
+      "CASE": 5,
+      "MOBIL": 7,
+      "SO2": 20,
+      "COIN": 12
+    };
 
-      if (input === "MAGA BEKA") {
-        if (!localStorage.getItem("promoUsed")) {
-          localStorage.setItem("coins", (parseInt(localStorage.getItem("coins")) || 0) + 100);
-          localStorage.setItem("promoUsed", "true");
-          message.style.color = "green";
-          message.textContent = "Promokod muvaffaqiyatli faollashtirildi! +100 tanga 🎉";
-        } else {
+    const usedPromos = JSON.parse(localStorage.getItem("usedPromos")) || [];
+    let balance = parseInt(localStorage.getItem("balance")) || 0;
+
+    function usePromo() {
+      const input = document.getElementById("promoInput").value.trim().toUpperCase();
+      const message = document.getElementById("message");
+
+      if (validPromos[input]) {
+        if (usedPromos.includes(input)) {
+          message.textContent = "Bu promokod allaqachon ishlatilgan!";
           message.style.color = "orange";
-          message.textContent = "Siz bu promokodni allaqachon ishlatgansiz.";
+        } else {
+          const reward = validPromos[input];
+          balance += reward;
+          localStorage.setItem("balance", balance);
+          usedPromos.push(input);
+          localStorage.setItem("usedPromos", JSON.stringify(usedPromos));
+          message.textContent = `Promokod qabul qilindi! Sizga ${reward} Tanga qo‘shildi.`;
+          message.style.color = "green";
         }
       } else {
+        message.textContent = "Noto‘g‘ri promokod!";
         message.style.color = "red";
-        message.textContent = "Noto'g'ri promokod.";
       }
+
+      document.getElementById("promoInput").value = "";
     }
-
-    document.getElementById("coins").textContent = localStorage.getItem("coins") || 0;
-
   </script>
-
-
-<script src="./promo.js"></script>
 </body>
 </html>

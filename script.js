@@ -35,11 +35,11 @@ const statusText = document.getElementById("crash-status");
 startBtn.addEventListener("click", () => {
   const bet = parseInt(document.getElementById("bet-amount").value);
   if (isNaN(bet) || bet <= 0) {
-    alert("Iltimos, to‘g‘ri coin miqdorini kiriting.");
+    alert("Iltimos, to‘g‘ri Tanga miqdorini kiriting.");
     return;
   }
   if (bet > coin) {
-    alert("Coin yetarli emas!");
+    alert("Tanga yetarli emas!");
     return;
   }
 
@@ -80,10 +80,10 @@ function endGame(won, amount) {
   cashOutBtn.disabled = true;
 
   if (won) {
-    statusText.textContent = `🎉 Yutdingiz! +${amount} coin`;
+    statusText.textContent = `🎉 Yutdingiz! +${amount} Tanga`;
     statusText.style.color = "green";
   } else {
-    statusText.textContent = `💥 Portladi! Coin yo'qotdingiz.`;
+    statusText.textContent = `💥 Portladi! Tanga yo'qotdingiz.`;
     statusText.style.color = "red";
   }
 }
@@ -115,13 +115,13 @@ function renderKeys() {
 
 function buyKey(type) {
   const prices = {
-    gold: 50,
-    blue: 30,
-    green: 10
+    gold: 1000000,
+    blue: 100000,
+    green: 1000
   };
 
   if (coin < prices[type]) {
-    alert("Coin yetarli emas!");
+    alert("Tanga yetarli emas!");
     return;
   }
 
@@ -150,18 +150,18 @@ function openKey(type) {
   // Random mukofot
   let reward = 0;
   if (type === "gold") {
-    reward = Math.floor(Math.random() * 100) + 50; // 50–149
+    reward = Math.floor(Math.random() * 1000000) + 1000; // 50–149
   } else if (type === "blue") {
-    reward = Math.floor(Math.random() * 50) + 20; // 20–69
+    reward = Math.floor(Math.random() * 100000) + 200; // 20–69
   } else if (type === "green") {
-    reward = Math.floor(Math.random() * 20) + 5; // 5–24
+    reward = Math.floor(Math.random() * 1000) + 50; // 5–24
   }
 
   coin += reward;
   localStorage.setItem("coin", coin);
   document.getElementById("coin-count").textContent = coin;
 
-  document.getElementById("reward-text").textContent = `🎉 Siz ${reward} coin yutib oldingiz!`;
+  document.getElementById("reward-text").textContent = `🎉 Siz ${reward} Tanga yutib oldingiz!`;
 }
 
 
