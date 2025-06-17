@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Koleso G‘ildirak</title>
+  <link rel="stylesheet" href="koleso.css" />
+</head>
+<body>
+  <div class="container">
+    <h2 class="ff"><a href="./index.html">Ortga</a></h2>
+    <h1>Koleso G‘ildirak</h1>
+
+    <div class="balance">Balans: <span id="balance">100</span> coin</div>
+
+    <div class="controls">
+      <input type="number" id="betAmount" placeholder="Tikiladigan coin miqdori" />
+      <select id="colorSelect">
+        <option value="red">Qizil (x2)</option>
+        <option value="green">Yashil (x3)</option>
+        <option value="blue">Ko‘k (x5)</option>
+        <option value="yellow">Sariq (x2)</option>
+      </select>
+      <button onclick="spinWheel()">Tikish va Aylantirish</button>
+    </div>
+
+    <div id="wheel" class="wheel"></div>
+
+    <div id="result" class="result"></div>
+  </div>
+
+  <script src="koleso.js"></script>
+</body>
+</html>

@@ -3,16 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TangaX 🐼</title>
+  <title>OltinX 🐼</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4-0GLe-pt8w_n33O3zaOBqCAZ3ap6fmIyC0qGyNv04pIWdzvm4tJefbq0BuxLcoLa6CM&usqp=CAU" type="image/x-icon" />
 </head>
 <body>
   <div class="profile">
-    <h2>👤 Profil: <span id="username">Mehmon</span></h2>
-    <button class="gg"><a href="./promokod.html">Promokod</a></button>
-    <p>💰 Tangalarlar: <span id="coin-count">0</span></p>
-    <button id="add-coin">+10 Tanga</button>
+    <h2><i class="fa-solid fa-circle-user"></i> Profil: <span id="username">Mehmon</span></h2>
+    <button class="gg"><a href="./promokod.html">Promokod <i class="fa-solid fa-gift"></i></a></button>
+    <br><br>
+    <button class="ee" id="dailyBonusBtn"> Kunlik bonusni olish <i class="fa-solid fa-gift"></i></button>
+    <p class="uu"><i class="fa-solid fa-coins"></i> Oltinlar: <span id="coin-count">0</span></p>
+    <button id="add-coin">+10 Oltin</button>
     <hr style="margin: 40px 0; border: 1px solid #ccc;">
 
 <div class="crash-game">
@@ -25,21 +28,25 @@
 
   <p id="crash-status"></p>
 </div>
-
+<br>
+<br>
+<h2>Oyinlar ;</h2>
+<br>
+<button class="vv"> <a href="./koleso.html">Gildirak <i class="fa-solid fa-gamepad"></i></a></button>
   <hr style="margin: 40px 0; border: 1px solid #ccc;">
 
 <div class="shop">
   <h2>🛒 Keys Do‘koni</h2>
   <div class="item">
-    <p>🟡 Gold Key — 1000000 coin</p>
+    <p>🟡 Gold <i class="fa-solid fa-key"></i> — 1000000 Oltin</p>
     <button onclick="buyKey('gold')">Sotib olish</button>
   </div>
   <div class="item">
-    <p>🔵 Blue Key — 100000 coin</p>
+    <p>🔵 Blue <i class="fa-solid fa-key"></i> — 100000 Oltin</p>
     <button onclick="buyKey('blue')">Sotib olish</button>
   </div>
   <div class="item">
-    <p>🟢 Green Key — 1000 coin</p>
+    <p>🟢 Green <i class="fa-solid fa-key"></i> — 1000 Oltin</p>
     <button onclick="buyKey('green')">Sotib olish</button>
 
     
@@ -48,13 +55,13 @@
 </div>
 
 <div class="inventory">
-  <h3>🎒 Sizning keyslaringiz:</h3>
+  <h3><i class="fa-solid fa-suitcase"></i> Sizning keyslaringiz:</h3>
   <ul id="key-list"></ul>
 </div>
 <br>
 <br>
 <div class="open-keys">
-  <h3>🎁 Key ochish:</h3>
+  <h3>🎁 Key ochish <i class="fa-solid fa-key"></i>:</h3>
   <br>
   <button onclick="openKey('gold')">🟡 Gold Key-ni och</button>
   <br><br>
@@ -63,7 +70,18 @@
   <button onclick="openKey('green')">🟢 Green Key-ni och</button>
   <p id="reward-text" style="margin-top: 10px; font-weight: bold;"></p>
 </div>
+<br>
 
+<h3>Malumotlar ;</h3>
+<br>
+
+<button class="hh"><a href="https://bekxaa.github.io/Contact-Me/index.html">Chiqarib Olish <i class="fa-solid fa-money-check-dollar"></i> 🔋</a></button>
+<br><br>
+<button class="hh"><a href="https://t.me/BeKxAAdMiNuZb">Operator Blan Boglanish <i class="fa-solid fa-headset"></i> 👋</a></button>
+<br><br>
+<button class="hh"><a href="https://docs.google.com/document/d/1-DCMf-AtNJqr_2E8sJy8o2fo8U8Kqm_cT2NjFJCrqXA/edit?usp=sharing">Qoidalar <i class="fa-solid fa-circle-info"></i></a></button>
+<br><br>
+<button class="hh"><a href="https://docs.google.com/forms/d/e/1FAIpQLSd17ab61wjFhFtJlSfFq-tACnrH9lHmOqzIERC4_F7YrxowKA/viewform?usp=sharing&ouid=103001605033324527855">Promokodlar <i class="fa-solid fa-gift"></i></a></button>
 
 
 

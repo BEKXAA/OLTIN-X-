@@ -46,6 +46,11 @@ body {
   transform: scale(1.02);
 }
 
+.uu i{
+  color: rgb(167, 167, 0);
+}
+
+
 h2 {
   font-size: 1.5rem;
   margin-bottom: 10px;
@@ -55,6 +60,21 @@ p {
   font-size: 1.2rem;
   margin: 10px 0 20px;
 }
+
+
+.hh a{
+  text-decoration: none;
+  color: white;
+  
+}
+
+
+.hh i{
+  
+  color: rgb(0, 0, 0);
+
+}
+
 
 button {
   padding: 12px 24px;
@@ -157,6 +177,7 @@ button:hover {
   margin-bottom: 15px;
 }
 
+
 .shop button {
   background: #ff6f00;
   padding: 10px 15px;
@@ -182,4 +203,27 @@ button:hover {
   margin: 5px 0;
 }
 
+.gg i{
+  text-decoration: none;
+  color: black;
+}
+
+.vv a{
+  text-decoration: none;
+  color: white;
+}
+
+
+#dailyBonusBtn {
+    padding: 10px 20px;
+    background-color: #00c853;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.ee i{
+  color: black;
+}
 

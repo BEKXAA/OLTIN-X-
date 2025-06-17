@@ -80,10 +80,10 @@ function endGame(won, amount) {
   cashOutBtn.disabled = true;
 
   if (won) {
-    statusText.textContent = `🎉 Yutdingiz! +${amount} Tanga`;
+    statusText.textContent = `🎉 Yutdingiz! +${amount} Oltin`;
     statusText.style.color = "green";
   } else {
-    statusText.textContent = `💥 Portladi! Tanga yo'qotdingiz.`;
+    statusText.textContent = `💥 Portladi! Oltin yo'qotdingiz.`;
     statusText.style.color = "red";
   }
 }
@@ -161,9 +161,57 @@ function openKey(type) {
   localStorage.setItem("coin", coin);
   document.getElementById("coin-count").textContent = coin;
 
-  document.getElementById("reward-text").textContent = `🎉 Siz ${reward} Tanga yutib oldingiz!`;
+  document.getElementById("reward-text").textContent = `🎉 Siz ${reward} Oltin yutib oldingiz!`;
 }
 
+
+// Boshlang'ich funksiyalar
+function getBalance() {
+    return parseInt(localStorage.getItem("balance") || "0");
+}
+
+function setBalance(amount) {
+    localStorage.setItem("balance", amount);
+}
+
+function getLastBonusDate() {
+    return localStorage.getItem("lastBonusDate");
+}
+
+function setLastBonusDate(dateStr) {
+    localStorage.setItem("lastBonusDate", dateStr);
+}
+
+// Bugungi sana (faqat yil-oy-kun formatda)
+function getTodayDateStr() {
+    const today = new Date();
+    return today.toISOString().split('T')[0];
+}
+
+// Bonus berish funksiyasi
+function giveDailyBonus() {
+    const today = getTodayDateStr();
+    const lastDate = getLastBonusDate();
+
+    if (lastDate === today) {
+        alert("Siz bugungi bonusni oldingiz ✅");
+        return;
+    }
+
+    const newBalance = getBalance() + 10;
+    setBalance(newBalance);
+    setLastBonusDate(today);
+
+    alert("🎉 Sizga 10 oltin berildi!");
+}
+
+// Tugmaga bosish
+document.getElementById("dailyBonusBtn").addEventListener("click", giveDailyBonus);
+
+// Agar balans bo'lmasa, 0 qilib qo'yamiz
+if (localStorage.getItem("balance") === null) {
+    setBalance(0);
+}
 
 
 

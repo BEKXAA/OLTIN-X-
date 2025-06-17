@@ -1,0 +1,60 @@
+body {
+  font-family: sans-serif;
+  background: #111;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+.controls {
+  margin-top: 20px;
+}
+
+input, select, button {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+button {
+  background: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.wheel {
+  margin: 30px auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 10px solid #fff;
+  position: relative;
+  background: conic-gradient(
+    red 0deg 90deg,
+    green 90deg 180deg,
+    blue 180deg 270deg,
+    yellow 270deg 360deg
+  );
+  animation: none;
+}
+
+.result {
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+.balance {
+  font-size: 18px;
+}
+
+
+.ff a{
+    text-decoration: none;
+    color: white;
+}
