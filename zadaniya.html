@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadaniya</title>
+</head>
+<body>
+    <!-- Zadaniya bo'limi -->
+<div id="zadaniya">
+  <h2 class="gg"><a href="./index.html">ortga</a></h2>
+  <br>
+  <h2>Kundalik Zadaniyalar</h2>
+
+  <div class="task">
+    <p>1. Saytga kirganingiz uchun</p>
+    <button onclick="completeTask(1, 5)">Bajarildi</button>
+  </div>
+
+  <div class="task">
+    <p>2. Coin yegish tugmasini 1 marta bosish</p>
+    <button onclick="completeTask(2, 10)">Bajarildi</button>
+  </div>
+
+  <div class="task">
+    <p>3. Promokod aktivlashtirish</p>
+    <button onclick="completeTask(3, 15)">Bajarildi</button>
+  </div>
+</div>
+
+<style>
+  #zadaniya {
+    padding: 20px;
+    max-width: 500px;
+    margin: auto;
+  }
+.gg a{
+  text-decoration: none;
+  color: rgb(39, 39, 39);
+}
+
+
+  #zadaniya h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+  }
+
+  .task {
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .task p {
+    margin: 0;
+    font-size: 16px;
+    color: #222;
+  }
+
+  .task button {
+    padding: 10px;
+    font-size: 16px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .task button:hover {
+    background: #218838;
+  }
+
+  .task button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+  }
+
+  @media (max-width: 480px) {
+    #zadaniya {
+      padding: 10px;
+    }
+
+    .task {
+      padding: 12px;
+    }
+
+    .task p {
+      font-size: 15px;
+    }
+
+    .task button {
+      font-size: 15px;
+      padding: 8px;
+    }
+  }
+</style>
+
+<script>
+  function getBalance() {
+    return parseInt(localStorage.getItem("coin-count") || "0");
+  }
+
+  function setBalance(newBalance) {
+    localStorage.setItem("coin-count", newBalance);
+  }
+
+  function completeTask(taskId, reward) {
+    const completedTasks = JSON.parse(localStorage.getItem("completedTasks") || "{}");
+
+    if (completedTasks[taskId]) {
+      alert("Bu zadaniya allaqachon bajarilgan!");
+      return;
+    }
+
+    const currentBalance = getBalance();
+    const newBalance = currentBalance + reward;
+    setBalance(newBalance);
+
+    completedTasks[taskId] = true;
+    localStorage.setItem("completedTasks", JSON.stringify(completedTasks));
+
+    alert("Zadaniya bajarildi! +" + reward + " coin");
+    location.reload();
+  }
+
+  // 📅 Sana tekshirish va reset qilish
+  function checkDailyReset() {
+    const today = new Date().toLocaleDateString(); // Faqat sana (soatsiz)
+    const lastDate = localStorage.getItem("zadaniyaDate");
+
+    if (today !== lastDate) {
+      // Har kuni yangilansin
+      localStorage.removeItem("completedTasks");
+      localStorage.setItem("zadaniyaDate", today);
+    }
+  }
+
+  window.onload = () => {
+    checkDailyReset(); // ✅ Reset tekshiruvi
+
+    const completedTasks = JSON.parse(localStorage.getItem("completedTasks") || "{}");
+    for (const taskId in completedTasks) {
+      const btn = document.querySelector(`button[onclick*="(${taskId},"]`);
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = "Bajarilgan";
+      }
+    }
+  };
+</script>
+
+</body>
+</html>

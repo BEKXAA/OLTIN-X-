@@ -9,6 +9,10 @@
   color: white;
 }
 
+.telegram i{
+  color: black;
+  font-size: 25px;
+}
 
 body {
   font-family: 'Segoe UI', sans-serif;
