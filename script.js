@@ -212,6 +212,3 @@ document.getElementById("dailyBonusBtn").addEventListener("click", giveDailyBonu
 if (localStorage.getItem("balance") === null) {
     setBalance(0);
 }
-
-
-
