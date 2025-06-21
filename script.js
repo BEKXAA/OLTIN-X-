@@ -1,3 +1,36 @@
+// Dark Mode Functionality
+function initDarkMode() {
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  const body = document.body;
+  const icon = darkModeToggle.querySelector('i');
+  
+  // Load saved dark mode preference
+  const isDarkMode = localStorage.getItem('darkMode') === 'true';
+  
+  if (isDarkMode) {
+    body.classList.add('dark-mode');
+    icon.className = 'fa-solid fa-sun';
+  }
+  
+  darkModeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    const isDark = body.classList.contains('dark-mode');
+    
+    // Update icon
+    if (isDark) {
+      icon.className = 'fa-solid fa-sun';
+    } else {
+      icon.className = 'fa-solid fa-moon';
+    }
+    
+    // Save preference
+    localStorage.setItem('darkMode', isDark);
+  });
+}
+
+// Initialize dark mode when page loads
+document.addEventListener('DOMContentLoaded', initDarkMode);
+
 // Coin va foydalanuvchini localStorage dan yuklash
 let coin = localStorage.getItem("coin") || 0;
 let username = localStorage.getItem("username") || "Mehmon";
@@ -13,7 +46,7 @@ document.getElementById("add-coin").addEventListener("click", () => {
   localStorage.setItem("coin", coin);
 });
 
-// Agar foydalanuvchi istasa, nickname qo‘shish mumkin:
+// Agar foydalanuvchi istasa, nickname qo'shish mumkin:
 if (!localStorage.getItem("username")) {
   const name = prompt("Ismingizni kiriting:");
   if (name) {
@@ -35,7 +68,7 @@ const statusText = document.getElementById("crash-status");
 startBtn.addEventListener("click", () => {
   const bet = parseInt(document.getElementById("bet-amount").value);
   if (isNaN(bet) || bet <= 0) {
-    alert("Iltimos, to‘g‘ri Tanga miqdorini kiriting.");
+    alert("Iltimos, to'g'ri Tanga miqdorini kiriting.");
     return;
   }
   if (bet > coin) {
@@ -134,7 +167,7 @@ function buyKey(type) {
   
 }
 
-// Dastlabki keys ko‘rinishi
+// Dastlabki keys ko'rinishi
 renderKeys();
 
 

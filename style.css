@@ -231,3 +231,174 @@ button:hover {
   color: black;
 }
 
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.dark-mode-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode-btn:hover {
+  background: #555;
+  transform: scale(1.1);
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: #fff;
+}
+
+body.dark-mode .profile {
+  background: #2d2d44;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .crash-game {
+  background: #2d2d44;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .shop,
+body.dark-mode .inventory {
+  background: #2d2d44;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .crash-game input {
+  background: #3d3d54;
+  border: 1px solid #555;
+  color: #fff;
+}
+
+body.dark-mode .crash-game input::placeholder {
+  color: #aaa;
+}
+
+body.dark-mode .telegram i {
+  color: #fff;
+}
+
+body.dark-mode .gg i {
+  color: #fff;
+}
+
+body.dark-mode .hh i {
+  color: #fff;
+}
+
+body.dark-mode .ee i {
+  color: #fff;
+}
+
+body.dark-mode hr {
+  border-color: #555;
+}
+
+/* Dark mode styles for specific pages */
+body.dark-mode #zadaniya {
+  background: #2d2d44;
+  color: #fff;
+}
+
+body.dark-mode .task {
+  background: #3d3d54;
+  color: #fff;
+}
+
+body.dark-mode .task p {
+  color: #fff;
+}
+
+body.dark-mode .gg a {
+  color: #fff;
+}
+
+body.dark-mode .promo-container {
+  background: #2d2d44;
+  color: #fff;
+}
+
+body.dark-mode .promo-container input {
+  background: #3d3d54;
+  border-color: #555;
+  color: #fff;
+}
+
+body.dark-mode .promo-container input::placeholder {
+  color: #aaa;
+}
+
+body.dark-mode .ortga a {
+  color: #fff;
+}
+
+body.dark-mode .container {
+  color: #fff;
+}
+
+body.dark-mode .container h1,
+body.dark-mode .container h2 {
+  color: #fff;
+}
+
+body.dark-mode .container a {
+  color: #fff;
+}
+
+body.dark-mode .balance {
+  color: #fff;
+}
+
+body.dark-mode .controls input,
+body.dark-mode .controls select {
+  background: #3d3d54;
+  border-color: #555;
+  color: #fff;
+}
+
+body.dark-mode .controls select option {
+  background: #3d3d54;
+  color: #fff;
+}
+
+body.dark-mode .board {
+  background: #2d2d44;
+}
+
+body.dark-mode .cell {
+  background: #3d3d54;
+  border-color: #555;
+}
+
+body.dark-mode .case {
+  background: #2d2d44;
+  border-color: #555;
+}
+
+body.dark-mode .case:hover {
+  background: #3d3d54;
+}
+
+body.dark-mode .hh a {
+  color: #fff;
+}
+
+body.dark-mode .ff a {
+  color: #fff;
+}
+

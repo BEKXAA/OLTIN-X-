@@ -3,13 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Koleso G‘ildirak</title>
+  <title>Koleso G'ildirak</title>
+  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="koleso.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
+  <div class="dark-mode-toggle">
+    <button id="darkModeToggle" class="dark-mode-btn">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+  </div>
+  
   <div class="container">
     <h2 class="ff"><a href="./index.html">Ortga</a></h2>
-    <h1>Koleso G‘ildirak</h1>
+    <h1>Koleso G'ildirak</h1>
 
     <div class="balance">Balans: <span id="balance">100</span> coin</div>
 
@@ -18,7 +26,7 @@
       <select id="colorSelect">
         <option value="red">Qizil (x2)</option>
         <option value="green">Yashil (x3)</option>
-        <option value="blue">Ko‘k (x5)</option>
+        <option value="blue">Ko'k (x5)</option>
         <option value="yellow">Sariq (x2)</option>
       </select>
       <button onclick="spinWheel()">Tikish va Aylantirish</button>
@@ -29,6 +37,7 @@
     <div id="result" class="result"></div>
   </div>
 
+  <script src="script.js"></script>
   <script src="koleso.js"></script>
 </body>
 </html>

@@ -4,17 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sapyor O'yini</title>
+  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="sapyor.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="shortcut icon" href="https://sinaps.uz/wp-content/uploads/2023/10/atom_bombasining_yadroviy_bombadan_nima_farqi_bor_01.webp" type="image/x-icon" />
 </head>
 <body>
+  <div class="dark-mode-toggle">
+    <button id="darkModeToggle" class="dark-mode-btn">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+  </div>
+  
   <div class="container">
     <h2><a href="./index.html">ortga</a></h2>
-    <h1>Sapyor O‘yini</h1>
+    <h1>Sapyor O'yini</h1>
     <div class="balance">Balans: <span id="balance">0</span> 🪙</div>
-    <button class="sapyor" onclick="startGame()">O‘yinni Boshlash</button>
+    <button class="sapyor" onclick="startGame()">O'yinni Boshlash</button>
     <div id="board" class="board"></div>
   </div>
+  <script src="script.js"></script>
   <script src="sapyor.js"></script>
 </body>
 </html>

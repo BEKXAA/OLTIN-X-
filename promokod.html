@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Promokod</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <style>
     body {
       font-family: sans-serif;
@@ -49,10 +51,30 @@
   color: black;
 }
 
+.dark-mode-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+
+.dark-mode-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+}
 
   </style>
 </head>
 <body>
+  <div class="dark-mode-toggle">
+    <button id="darkModeToggle" class="dark-mode-btn">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+  </div>
+  
   <div class="promo-container">
     <h3 class="ortga"><a href="./index.html">Ortga</a></h3>
     <h2>Promokod kiriting</h2>
@@ -102,5 +124,7 @@
       document.getElementById("promoInput").value = "";
     }
   </script>
+  
+  <script src="script.js"></script>
 </body>
 </html>
